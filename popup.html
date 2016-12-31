@@ -1,0 +1,89 @@
+<!doctype html>
+<html>
+<head>
+<script type="text/javascript" src="scripts/popup.js"></script>
+
+<meta charset="UTF-8">
+<title>BandCamp Extension</title>
+<style type="text/css">
+.main-text {
+	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	color: #FFFFFF;
+}
+#playAlbum {
+	border-color:#969696;
+	color: #FFFFFF;	
+	background-color: #727070;
+}
+#container {
+	width: 300px;
+	height: auto;
+	background-color: #000000;
+	border: 2px solid #000000;
+	
+}
+#head {
+	background-color: #363333;
+	width:auto;
+	height: 40px;
+	text-align:center;
+	font-size: 2.2em;
+	padding: 10px 2px 3px 2px;
+}
+.body_main {
+	background-color: #363333;
+}
+.button {
+	padding: 4px;
+	margin: 4px;
+	width: 45%;	
+	float: left;
+	background: #7B7B7B;
+	color: white;
+}
+.centerObjects {
+	display: flex;
+	justify-content:center;
+}
+.media {
+	border:none;
+	background-color: #A7A3A3;
+	width: 40px;
+	height: 40px;
+	margin: 5px 10px 5px 5px;
+}
+
+.mediaButtons {
+	background-color: #A7A3A3;
+}
+#pause { background-image:url(images/play.png);
+background-size: contain;}
+
+#skip { background:url(images/skip.png) no-repeat;
+background-size: contain;}
+ 
+#repeat { background:url(images/repeat.png) no-repeat;
+background-size: contain;}
+</style>
+</head>
+
+<body>
+<div id="container" class="main-text">
+<header id="head">Auto-Camp</header>
+<div class="body_main">
+	<div class="centerObjects">
+		<button class="button" id="extract">Scrape Data</button>
+    	<button class="button" id="play" >Start Album</button>
+        <button class="button" id="reset">Clear Data</button>
+    </div>
+    <div class="centerObjects mediaButtons">
+    	<button class="media" id="repeat"></button>
+        <button class="media" id="pause"></button>
+        <button class="media" id="skip"></button>
+    </div>
+</div>
+</div>
+</body>
+</html>
