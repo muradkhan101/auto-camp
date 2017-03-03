@@ -1,88 +1,65 @@
 <!doctype html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css"/>
 <script type="text/javascript" src="scripts/popup.js"></script>
-
+<script type="text/javascript" src="scripts/react/dist/react.min.js"></script>
+<script type="text/javascript" src="scripts/react-dom/dist/react-dom.min.js"></script>
 <meta charset="UTF-8">
 <title>BandCamp Extension</title>
 <style type="text/css">
-.main-text {
-	font-family: Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	font-size: 12px;
-	font-style: normal;
-	color: #FFFFFF;
-}
-#playAlbum {
-	border-color:#969696;
-	color: #FFFFFF;	
-	background-color: #727070;
-}
-#container {
-	width: 300px;
-	height: auto;
-	background-color: #000000;
-	border: 2px solid #000000;
-	
-}
-#head {
-	background-color: #363333;
-	width:auto;
-	height: 40px;
-	text-align:center;
-	font-size: 2.2em;
-	padding: 10px 2px 3px 2px;
-}
-.body_main {
-	background-color: #363333;
-}
-.button {
-	padding: 4px;
-	margin: 4px;
-	width: 45%;	
-	float: left;
-	background: #7B7B7B;
+
+#container {width: 305px;}
+.float-l {float: left;}
+.centerThis {padding-left: 50%;}
+btn {margin-top: 5px;}
+img {width: auto;}
+.glyphicon {font-size: 1.4em;}
+img {width: inherit;}
+li:hover {color: #1A73D9; cursor: pointer;}
+#buttonHolder {margin-bottom: 5px;}
+#extract {margin-right: 8px;}
+
+#header {
+	background-color: #3e3e3e;
 	color: white;
+	font-size: 1em;
 }
-.centerObjects {
-	display: flex;
-	justify-content:center;
+#albumArt {
+	margin-right: 10px;
+	background: #aaa;
+	width: 100px;
 }
-.media {
-	border:none;
-	background-color: #A7A3A3;
-	width: 40px;
-	height: 40px;
-	margin: 5px 10px 5px 5px;
+#showTracks {margin-left: 5px;}
+#trackList {
+	clear: both;
+	top: 30px;
+	position: relative;
+	transition: all 1s ease-in;
 }
+.hidden {max-height: 0px;}
+.visible {max-height: auto;}
 
-.mediaButtons {
-	background-color: #A7A3A3;
-}
-#pause { background-image:url(images/play.png);
-background-size: contain;}
-
-#skip { background:url(images/skip.png) no-repeat;
-background-size: contain;}
- 
-#repeat { background:url(images/repeat.png) no-repeat;
-background-size: contain;}
 </style>
 </head>
 
 <body>
-<div id="container" class="main-text">
-<header id="head">Auto-Camp</header>
-<div class="body_main">
-	<div class="centerObjects">
-		<button class="button" id="extract">Scrape Data</button>
-    	<button class="button" id="play" >Start Album</button>
-        <button class="button" id="reset">Clear Data</button>
-    </div>
-    <div class="centerObjects mediaButtons">
-    	<button class="media" id="repeat"></button>
-        <button class="media" id="pause"></button>
-        <button class="media" id="skip"></button>
-    </div>
+<div id="container">
+<h1 class="text-center" id="header">Auto-Camp</h1>
+<div id="buttonHolder">
+		<button class="btn btn-primary" id="extract">Scrape Data</button>
+  	<button class="btn btn-primary" id="play" >Start Album</button>
+    <button class="btn btn-primary" id="reset">Clear Data</button>
+</div>
+<div id="music-info">
+	<div id="albumArt"></div>
+	<div id="songName" class="text-center">belispeak</div>
+	<div id="artistAlbum" class="text-center"> Purity Rings - Shrines</div>
+</div>
+<div class="centerThis">
+	<button class="glyphicon glyphicon-backward" id="repeat"></button>
+  <button class="glyphicon glyphicon-pause" id="pause"></button>
+  <button class="glyphicon glyphicon-forward" id="skip"></button>
 </div>
 </div>
 </body>
